@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">aop-part2-chapter01</string>
+    <string name="bmi">BMI :</string>
+    <string name="result">결과는 :</string>
+</resources>
