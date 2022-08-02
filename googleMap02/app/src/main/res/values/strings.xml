@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">googleMap02</string>
+    <string name="main">main페이지</string>
+    <string name="showMap">지도보기</string>
 </resources>
