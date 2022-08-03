@@ -7,10 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -22,21 +18,27 @@ import com.google.android.gms.maps.model.MarkerOptions
 //import org.jetbrains.anko.yesButton
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
+import android.os.Looper
 import android.os.SystemClock
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.Toast
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
 //import kotlinx.android.synthetic.main.activity_maps.*
 //import org.jetbrains.anko.toast
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
-    private val polyLineOptions=PolylineOptions().width(5f).color(Color.RED) // 이동경로를 그릴 선
+    private val polyLineOptions=PolylineOptions().width(5f).color(Color.CYAN) // 이동경로를 그릴 선
     private lateinit var mMap: GoogleMap // 마커, 카메라 지정을 위한 구글 맵 객체
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient // 위치 요청 메소드 담고 있는 객체
     private lateinit var locationRequest:LocationRequest // 위치 요청할 때 넘겨주는 데이터에 관한 객체
     private lateinit var locationCallback:MyLocationCallBack // 위치 확인되고 호출되는 객체
+
+
     // 위치 정보를 얻기 위한 각종 초기화
     private fun locationInit(){
         // FusedLocationProviderClient 객체 생성
@@ -73,6 +75,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
+
     // 이 메소드부터 프로그램 시작
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,14 +83,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // 화면이 꺼지지 않게 하기
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         // 세로 모드로 화면 고정
-        requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         // 위치 정보를 얻기 위한 각종 초기화
+
         locationInit()
         // 프래그먼트 매니저로부터 SupportMapFragment프래그먼트를 얻는다. 이 프래그먼트는 지도를 준비하는 기능이 있다.
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         // 지도가 준비되면 알림을 받는다. (아마, get함수에서 다른 함수를 호출해서 처리하는 듯)
         mapFragment.getMapAsync(this)
     }
+
     // 프로그램이 켜졌을 때만 위치 정보를 요청한다
     override fun onResume(){
         super.onResume()
@@ -131,10 +136,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.animateCamera(CameraUpdateFactory.zoomTo(20f))
 //        // P.s. onMapReady가 호출된 후에 위치 수정이 가능하다!!
 //        polyLineOptions.add(GUMI)
+
     }
-
-
-
 
     // 권환 관련 메서드
     private val gps_request_code=1000 // gps에 관한 권한 요청 코드(번호)
@@ -186,4 +189,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                finish() }
 //        }.show()
     }
+
+
+
+
 }
