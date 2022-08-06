@@ -27,7 +27,7 @@
         android:id="@+id/button_current"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="현재위치보기"
+        android:text="현재 위치"
         android:textSize="30sp" />
 
 </LinearLayout>
