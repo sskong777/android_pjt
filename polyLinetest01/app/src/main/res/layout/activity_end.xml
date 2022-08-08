@@ -6,10 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/trashCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="쓰레기 개수 : "
+=======
+        android:id="@+id/TimeRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="총 시간 : "
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_pre"
         app:layout_constraintVertical_bias="0.431"
@@ -18,6 +25,7 @@
     </TextView>
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/TimeRecord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,6 +37,8 @@
         tools:layout_editor_absoluteX="29dp"></TextView>
 
     <TextView
+=======
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
         android:id="@+id/sumDistance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

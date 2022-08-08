@@ -196,11 +196,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        recordBtn.setOnClickListener {
 //            if(time!=0) lapTime()
 //        }
+<<<<<<< HEAD
         trashBtn.setOnClickListener {
             trashCount ++
             trashCountText.text = "$trashCount"
             println(trashCount)
         }
+=======
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
 
         end_button = findViewById(R.id.end_button)
 
@@ -209,8 +212,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         end_button.setOnClickListener { // 버튼 클릭시 할 행동
             pause()
             endIntent.putExtra("timeRecord",time)
+<<<<<<< HEAD
             endIntent.putExtra("sumDistance",sumDistance)
             endIntent.putExtra("trashCount", trashCount)
+=======
+            endIntent.putExtra("sumDistance",sumDistance - 1.316256E7)
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
             startActivity(endIntent)  // 화면 전환하기
             finish()
         }

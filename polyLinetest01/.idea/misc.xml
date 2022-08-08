@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/multicampus/Desktop/polyLinetest01/app/src/main/res/layout/activity_end.xml" value="0.4" />
         <entry key="..\:/Users/multicampus/Desktop/polyLinetest01/app/src/main/res/layout/activity_maps.xml" value="0.264" />
+=======
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
         <entry key="app/src/main/res/layout/activity_end.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.14010416666666667" />
       </map>

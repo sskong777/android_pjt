@@ -23,12 +23,19 @@ open class EndActivity : AppCompatActivity() {
 
     private lateinit var sumDistanceText: TextView
     private lateinit var timeRecordText: TextView
+<<<<<<< HEAD
     private lateinit var trashCountText: TextView
 
     private lateinit var btn_camera: Button
     private lateinit var iv_pre: ImageView
     private lateinit var now :TextView
 
+=======
+    private lateinit var btn_camera: Button
+    private lateinit var iv_pre: ImageView
+    private lateinit var now :TextView
+
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,10 +50,13 @@ open class EndActivity : AppCompatActivity() {
         sumDistanceText.text = "이동 거리 " + "$sumDistance" + "m"
 
 
+<<<<<<< HEAD
         val trashCount = intent.getIntExtra("trashCount",0)
         trashCountText = findViewById(R.id.trashCount)
         trashCountText.text = "총 쓰레기 수 : " + "$trashCount"
 
+=======
+>>>>>>> e9dc208a72f4bae8614da7a3e418419b7bad0371
         btn_camera = findViewById(R.id.btn_camera)
         iv_pre = findViewById(R.id.iv_pre)
         now = findViewById(R.id.now)
