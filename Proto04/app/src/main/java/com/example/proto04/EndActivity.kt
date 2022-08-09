@@ -1,4 +1,4 @@
-package com.example.polylinetest01
+package com.example.proto04
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -8,7 +8,9 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +18,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.proto04.retrofit.PloggingRequestBody
+import com.google.gson.annotations.SerializedName
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -28,10 +36,12 @@ open class EndActivity : AppCompatActivity() {
     private lateinit var btn_camera: Button
     private lateinit var iv_pre: ImageView
     private lateinit var now :TextView
+    private lateinit var imageSaveBtn: Button
+    private lateinit var bitmap:Bitmap
+    private var imgCount:Int = 0
 
-    private lateinit var btn_camera: Button
-    private lateinit var iv_pre: ImageView
-    private lateinit var now :TextView
+    private lateinit var nextButton:Button
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +61,35 @@ open class EndActivity : AppCompatActivity() {
         trashCountText = findViewById(R.id.trashCount)
         trashCountText.text = "총 쓰레기 수 : " + "$trashCount"
 
+        btn_camera = findViewById(R.id.btn_camera)
+        iv_pre = findViewById(R.id.iv_pre)
+        now = findViewById(R.id.now)
+
         val currentDateTime = Calendar.getInstance().time
         var dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
+
+        now.text = dateFormat
+
+        imageSaveBtn = findViewById(R.id.imageSaveBtn)
+        imageSaveBtn.setOnClickListener{
+            saveImage(bitmap, "plogging_result"+ "${imgCount}")
+            imgCount ++
+
+        }
+
+        // Retrofit
+        nextButton = findViewById(R.id.nextButton)
+        nextButton.setOnClickListener {
+            val ploggingData = PloggingRequestBody(
+                sumDistance,
+                timeRecord,
+                trashCount,
+                dateFormat,
+                "ploggingimg"
+                )
+            val ploggingWork = PloggingWork(ploggingData)
+            ploggingWork.work()
+        }
 
 
         // 카메라 권한 가져오기
@@ -60,6 +97,7 @@ open class EndActivity : AppCompatActivity() {
             setViews()
         }
     }
+
 
 
 
@@ -146,12 +184,53 @@ open class EndActivity : AppCompatActivity() {
                 FLAG_REQ_CAMERA ->{
                     if(data?.extras?.get("data") != null){
                         //카메라로 방금 촬영한 이미지를 미리 만들어 놓은 이미지뷰로 전달 합니다.
-                        val bitmap = data?.extras?.get("data") as Bitmap
+                        bitmap = data?.extras?.get("data") as Bitmap
                         iv_pre.setImageBitmap(bitmap)
                     }
                 }
             }
         }
+    }
+
+    open fun saveImage(bitmap: Bitmap?, saveImageName: String): Boolean {
+        val saveDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+            .toString() + "/directoryName"
+        val file = File(saveDir)
+        if (!file.exists()) {
+            file.mkdir()
+        }
+        val fileName = "$saveImageName.png"
+        val tempFile = File(saveDir, fileName)
+        var output: FileOutputStream? = null
+        try {
+            if (tempFile.createNewFile()) {
+                output = FileOutputStream(tempFile)
+                // 이미지 줄이기
+
+                val newBitmap = Bitmap.createScaledBitmap(bitmap!!, 200, 200, true)
+                newBitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+            } else {
+                // 같은 이름의 파일 존재
+                Log.d("TEST_LOG", "같은 이름의 파일 존재:$saveImageName")
+                return false
+            }
+        } catch (e: FileNotFoundException) {
+            Log.d("TEST_LOG", "파일을 찾을 수 없음")
+            return false
+        } catch (e: IOException) {
+            Log.d("TEST_LOG", "IO 에러")
+            e.printStackTrace()
+            return false
+        } finally {
+            if (output != null) {
+                try {
+                    output.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+        }
+        return true
     }
 
 
