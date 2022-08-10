@@ -20,12 +20,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.proto04.retrofit.PloggingRequestBody
 import com.google.gson.annotations.SerializedName
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import android.util.*
+import android.util.Base64
+import java.io.*
 
 open class EndActivity : AppCompatActivity() {
 
@@ -41,7 +40,9 @@ open class EndActivity : AppCompatActivity() {
     private var imgCount:Int = 0
 
     private lateinit var nextButton:Button
+    private var ploggingImg:String = ""
 
+    private lateinit var getButton: Button
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +67,7 @@ open class EndActivity : AppCompatActivity() {
         now = findViewById(R.id.now)
 
         val currentDateTime = Calendar.getInstance().time
-        var dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
+        val dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
 
         now.text = dateFormat
 
@@ -74,7 +75,8 @@ open class EndActivity : AppCompatActivity() {
         imageSaveBtn.setOnClickListener{
             saveImage(bitmap, "plogging_result"+ "${imgCount}")
             imgCount ++
-
+            ploggingImg = encodeImage(bitmap)
+            println(ploggingImg.length)
         }
 
         // Retrofit
@@ -85,18 +87,30 @@ open class EndActivity : AppCompatActivity() {
                 timeRecord,
                 trashCount,
                 dateFormat,
-                "ploggingimg"
+                ploggingImg
                 )
             val ploggingWork = PloggingWork(ploggingData)
             ploggingWork.work()
+
         }
+
+        getButton = findViewById(R.id.getButton)
+        getButton.setOnClickListener {
+            val nextIntent = Intent(this, PloggingDataActivity::class.java)
+            startActivity(nextIntent)
+        }
+
+
+
 
 
         // 카메라 권한 가져오기
         if(checkPermission(STORAGE_PERMISSION,FLAG_PERM_STORAGE)){
             setViews()
         }
+
     }
+
 
 
 
@@ -231,6 +245,13 @@ open class EndActivity : AppCompatActivity() {
             }
         }
         return true
+    }
+
+    private fun encodeImage(bm: Bitmap): String {
+        val baos = ByteArrayOutputStream()
+        bm.compress(Bitmap.CompressFormat.PNG, 100, baos)
+        val b = baos.toByteArray()
+        return Base64.encodeToString(b, Base64.DEFAULT)
     }
 
 

@@ -64,6 +64,13 @@
         android:text="플로깅 데이터 전달"
         app:layout_constraintTop_toBottomOf="@+id/imageSaveBtn"
         app:layout_constraintVertical_bias="0.496" />
+    <Button
+        android:id="@+id/getButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="플로깅 데이터 get"
+        app:layout_constraintTop_toBottomOf="@+id/nextButton"
+        app:layout_constraintVertical_bias="0.496" />
 
     <ImageView
         android:id="@+id/iv_pre"

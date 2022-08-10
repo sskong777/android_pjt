@@ -8,5 +8,6 @@ data class PloggingResponseBody(
     @SerializedName("msg")
     val msg: String?,
     @SerializedName("data")
-    val data: String?
+    val data: Any?
 )
+
