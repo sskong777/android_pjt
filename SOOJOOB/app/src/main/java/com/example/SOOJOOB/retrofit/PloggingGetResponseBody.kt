@@ -1,4 +1,4 @@
-package com.example.proto04
+package com.example.SOOJOOB
 
 import com.google.gson.annotations.SerializedName
 

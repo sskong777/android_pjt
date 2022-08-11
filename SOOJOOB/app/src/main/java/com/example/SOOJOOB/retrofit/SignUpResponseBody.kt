@@ -1,13 +1,12 @@
-package com.example.proto04
+package com.example.SOOJOOB
 
 import com.google.gson.annotations.SerializedName
 
-data class PloggingResponseBody(
+data class SignUpResponseBody(
     @SerializedName("statusCode")
     val statusCode: Int?,
     @SerializedName("msg")
     val msg: String?,
     @SerializedName("data")
-    val data: Any?
+    val data: String?
 )
-

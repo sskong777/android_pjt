@@ -1,8 +1,9 @@
-package com.example.proto04
+package com.example.SOOJOOB
 
 import android.content.Intent
 import android.util.Log
-import com.example.proto04.retrofit.PloggingRequestBody
+import com.example.SOOJOOB.PloggingGetResponseBody
+import com.example.SOOJOOB.RetrofitAPI
 import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody

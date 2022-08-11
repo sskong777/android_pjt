@@ -1,4 +1,4 @@
-package com.example.proto04.retrofit
+package com.example.SOOJOOB
 
 import com.google.gson.annotations.SerializedName
 
