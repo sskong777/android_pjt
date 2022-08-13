@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.SOOJOOB.retrofit.PloggingResult
 
-class RecyclerAdapter(val ploggingList: List<Result>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(val ploggingList: List<PloggingResult>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
 
@@ -20,12 +21,12 @@ class RecyclerAdapter(val ploggingList: List<Result>) : RecyclerView.Adapter<Rec
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.distance?.text = ploggingList[i].distance.toString()
+        viewHolder.distance?.text = ploggingList[i].distance.toString() + " M"
         viewHolder.date?.text = ploggingList[i].dateTime
-        viewHolder.recTime?.text = ploggingList[i].timeRecord.toString()
-
-        viewHolder.trashCnt?.text = ploggingList[i].trashCount.toString()
-        viewHolder.imageString = ploggingList[i].ploggingImg as String
+        val time = ploggingList[i].timeRecord?.div(100).toString() + "\"" + ploggingList[i].timeRecord?.rem(100).toString()
+        viewHolder.recTime?.text = time
+        viewHolder.trashCnt?.text = ploggingList[i].trashCount.toString() + " 개"
+        viewHolder.imageString = ploggingList[i].ploggingImg.toString()
         viewHolder.image?.setImageBitmap(viewHolder.imageString.toBitmap())
 
     }
@@ -48,7 +49,7 @@ class RecyclerAdapter(val ploggingList: List<Result>) : RecyclerView.Adapter<Rec
         val date =  itemView?.findViewById<TextView>(R.id.date)
         lateinit var imageString:String
 
-        }
+    }
 
 
 

@@ -29,10 +29,13 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBeszhi-7poqvl1ykblw6cOS6dIj5gVpFo" />
+            android:value="AIzaSyAS9cn9ixRM5oW2ODVy9UY5aYJbQBe273g"/>
 
         <activity
             android:name="com.example.SOOJOOB.BadgesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.SOOJOOB.NoBadgeActivity"
             android:exported="false" />
         <activity
             android:name="com.example.SOOJOOB.MapsActivity"
