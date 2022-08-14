@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="2022.07.13 15:23"
             android:textColor="@color/green"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,8 +45,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="거리 "
-            android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColor="@color/greenTxt"
             android:layout_below="@+id/date"/>
 
         <TextView
@@ -57,16 +57,16 @@
             android:layout_below="@+id/date"
             android:layout_marginLeft="5dp"
             android:text="3.21"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textColor="@color/greenTxt"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/recTime_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="시간 "
-            android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColor="@color/greenTxt"
             android:layout_below="@+id/distance_text"/>
 
         <TextView
@@ -77,16 +77,16 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/recTime_text"
             android:text="7 분 20 초"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textColor="@color/greenTxt"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/trashCnt_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="개수 "
-            android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColor="@color/greenTxt"
             android:layout_below="@+id/recTime_text"/>
 
 
@@ -96,8 +96,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="13"
-            android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColor="@color/greenTxt"
             android:layout_toRightOf="@+id/trashCnt_text"
             android:layout_below="@+id/recTime"/>
 

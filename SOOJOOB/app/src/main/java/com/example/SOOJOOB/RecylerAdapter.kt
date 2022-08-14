@@ -25,7 +25,8 @@ class RecyclerAdapter(val ploggingList: List<PloggingResult>) : RecyclerView.Ada
         viewHolder.date?.text = ploggingList[i].dateTime
         val second = ploggingList[i].timeRecord?.div(100)
         val minute = second?.div(60)
-        viewHolder.recTime?.text = minute.toString() + "분 "  + second.toString() +"초"
+        val second2 = second?.rem(60)
+        viewHolder.recTime?.text = minute.toString() + "분 "  + second2.toString() +"초"
         viewHolder.trashCnt?.text = ploggingList[i].trashCount.toString() + " 개"
         viewHolder.imageString = ploggingList[i].ploggingImg.toString()
         viewHolder.image?.setImageBitmap(viewHolder.imageString.toBitmap())

@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import com.example.SOOJOOB.BadgesActivity
+import com.example.SOOJOOB.MapsActivity
 import com.example.SOOJOOB.NoBadgeActivity
+import com.example.SOOJOOB.UserupdateActivity
 import com.example.SOOJOOB.databinding.FragmentMypageBinding
 import com.example.SOOJOOB.retrofit.BadgeWork
 import com.example.SOOJOOB.retrofit.UserWork
@@ -53,8 +55,16 @@ class MypageFragment : Fragment() {
 
                 startActivity(intent)
             })
+        }
 
+        binding.settingsButton.setOnClickListener {
+            val intent = Intent(activity, UserupdateActivity::class.java)
+            startActivity(intent)
+        }
 
+        binding.nextMaps.setOnClickListener {
+            val intent = Intent(activity, MapsActivity::class.java)
+            startActivity(intent)
         }
 
 //    override fun onDestroyView() {

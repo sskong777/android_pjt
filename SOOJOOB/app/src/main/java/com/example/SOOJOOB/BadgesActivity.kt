@@ -7,7 +7,6 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.example.SOOJOOB.databinding.ActivityBadgesBinding
-import com.example.SOOJOOB.databinding.ActivityNoBadgeBinding
 import com.example.SOOJOOB.retrofit.Badge
 import com.example.SOOJOOB.views.ContentAdapter
 
@@ -33,6 +32,12 @@ class BadgesActivity : AppCompatActivity() {
 
         val view = binding.root
         setContentView(view)
+
+
+
+        binding.backBadge.setOnClickListener {
+            super.onBackPressed()
+        }
 
 
         val bundle = intent.getBundleExtra("array_bundle")
@@ -80,7 +85,7 @@ class BadgesActivity : AppCompatActivity() {
             .into(imgView)
 
         val alertDialog = AlertDialog.Builder(this)
-            .setTitle("배지 정보")
+            .setTitle(" ")
             .create()
 
         val btnView = view.findViewById<Button>(R.id.dialog_ok)

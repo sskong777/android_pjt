@@ -28,7 +28,7 @@
             android:layout_centerVertical="true"
             android:text="SOOJOOB"
             android:textColor="#519800"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
 
@@ -80,8 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="GUEST"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
+                    android:textColor="@color/greenTxt"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -89,16 +89,16 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/mypage_username"
                     android:text=" 님이"
-                    android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textColor="@color/greenTxt"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/mypage_username"
                     android:text="지구를 아껴준 마음 🌱"
-                    android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textColor="@color/greenTxt"
+                    android:textSize="20sp" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:text="36.5"
                 android:textColor="@color/green"
-                android:textSize="22dp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:text="℃"
                 android:textColor="@color/green"
-                android:textSize="22dp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -132,7 +132,7 @@
                 android:layout_marginLeft="5dp"
                 android:text="😀"
                 android:textColor="#000000"
-                android:textSize="22dp" />
+                android:textSize="22sp" />
 
         </LinearLayout>
 
@@ -152,29 +152,29 @@
             android:layout_height="1dp"
             android:layout_below="@+id/mypage_progress"
             android:layout_marginBottom="10dp"
-            android:background="#E4E4E4"/>
+            android:background="#E4E4E4" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="5dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="손수 줍기 "
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/mypage_trash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 00"
-                android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textColor="@color/greenTxt"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -182,31 +182,31 @@
                 android:layout_height="wrap_content"
                 android:text=" 번"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:text="활동 배지 "
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/mypage_badge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 00"
-                android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textColor="@color/greenTxt"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 개"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -226,15 +226,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GUEST"
-            android:textSize="18dp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/greenTxt"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" 님의 마이페이지"
-            android:textSize="18dp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -258,11 +258,14 @@
                 android:id="@+id/my_hold_badge_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="#FFFFFF"
-                android:padding="20dp"
                 android:text="내가 보유한 배지"
-                android:textColor="@color/black"
-                android:textSize="22dp" />
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -293,10 +296,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:padding="20dp"
+                android:layout_margin="20dp"
                 android:text="내가 미보유한 배지"
-                android:textColor="@color/black"
-                android:textSize="22dp" />
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -326,11 +329,14 @@
                 android:id="@+id/my_text_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="#FFFFFF"
-                android:padding="20dp"
                 android:text="내가 작성한 글"
-                android:textColor="@color/black"
-                android:textSize="22dp"/>
+                android:textColor="@color/greenTxt"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -348,9 +354,16 @@
             <!--                android:background="#E4E4E4"/>-->
 
         </RelativeLayout>
-
-
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/next_maps"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_trash_can"/>
 
 </RelativeLayout>

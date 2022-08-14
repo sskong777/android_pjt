@@ -8,7 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.example.SOOJOOB.databinding.ActivityNoBadgeBinding
 import com.example.SOOJOOB.retrofit.Badge
-import com.example.SOOJOOB.views.ContentAdapter
+import com.example.SOOJOOB.views.NoContentAdapter
 
 class NoBadgeActivity : AppCompatActivity() {
     // 데이터
@@ -19,7 +19,7 @@ class NoBadgeActivity : AppCompatActivity() {
     // 어답터
 //    private lateinit var badgeGridRecyclerViewAdapter: BadgeGridRecyclerViewAdapter
 //    private lateinit var badgeGridRecyclerViewAdapter1: BadgeGridRecyclerViewAdapter
-    private lateinit var contentAdapter: ContentAdapter
+    private lateinit var contentAdapter: NoContentAdapter
 
 
     private lateinit var binding: ActivityNoBadgeBinding
@@ -32,6 +32,12 @@ class NoBadgeActivity : AppCompatActivity() {
         setContentView(view)
 
 
+        binding.backNobadges.setOnClickListener {
+            super.onBackPressed()
+        }
+
+
+
         val bundle = intent.getBundleExtra("array_bundle")
 
 
@@ -39,7 +45,7 @@ class NoBadgeActivity : AppCompatActivity() {
         badgeList = bundle?.getSerializable("my_badge_list") as ArrayList<Badge>
 
 
-        this.contentAdapter = ContentAdapter(this, badgeList)
+        this.contentAdapter = NoContentAdapter(this, badgeList)
 
 
         binding.noBadges.adapter = contentAdapter
@@ -73,11 +79,11 @@ class NoBadgeActivity : AppCompatActivity() {
         contentView.text = content
         Glide.with(view)
             .load(img)
-            .placeholder(R.drawable.ic_arrow_forward)
+            .placeholder(R.drawable.ic_lock)
             .into(imgView)
 
         val alertDialog = AlertDialog.Builder(this)
-            .setTitle("배지 정보")
+            .setTitle(" ")
             .create()
 
         val btnView = view.findViewById<Button>(R.id.dialog_ok)
