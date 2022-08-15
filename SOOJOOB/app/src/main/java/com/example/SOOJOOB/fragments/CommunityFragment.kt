@@ -7,14 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.SOOJOOB.*
 import com.example.SOOJOOB.databinding.FragmentCommunityBinding
-import com.example.SOOJOOB.retrofit.PloggingResult
 import com.example.SOOJOOB.retrofit.RetrofitAPI
 import retrofit2.Call
 import retrofit2.Response
@@ -22,7 +20,9 @@ import retrofit2.Response
 class CommunityFragment : Fragment() {
 
     private var fBinding : FragmentCommunityBinding? = null
-    private lateinit var createBtn:LinearLayout
+    private lateinit var createBtn: ImageView
+    private lateinit var lastestBtn: Button
+    private lateinit var pastBtn:Button
 
     fun work(){
         val service = RetrofitAPI.articleService
@@ -34,9 +34,22 @@ class CommunityFragment : Fragment() {
                     response: Response<ArticleGetResponseBody>
                 ) {
                     if (response.isSuccessful) {
-                        val result = response.body()
+                        val result = response.body()?.result?.reversed()
                         result?.let {
-                            it.result?.let { it1 -> setAdapter(it1) }
+                            it.let { it1 -> setAdapter(it1) }
+                        }
+                        lastestBtn.setOnClickListener {
+                            val lastest = response.body()?.result?.reversed()
+                            lastest?.let {
+                                it.let{it1 -> setAdapter(it1)}
+                            }
+                        }
+
+                        pastBtn.setOnClickListener {
+                            val past = response.body()?.result
+                            past?.let {
+                                it.let{it1 -> setAdapter(it1)}
+                            }
                         }
                     }
                 }
@@ -61,6 +74,8 @@ class CommunityFragment : Fragment() {
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
         recyler_view = itemView.findViewById(R.id.recyler_view)
+        lastestBtn = itemView.findViewById(R.id.lastestSort)
+        pastBtn = itemView.findViewById(R.id.pastSort)
         createBtn = itemView.findViewById(R.id.add_article_btn)
         createBtn.setOnClickListener {
             val intent = Intent(activity, ArticleInsertActivity::class.java)
