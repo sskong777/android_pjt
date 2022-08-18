@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class UserupdateRequestBody(
     @SerializedName("age")
-    val age: String?,
+    val age: Int?,
     @SerializedName("email")
     val email: String?,
 //    @SerializedName("gender")

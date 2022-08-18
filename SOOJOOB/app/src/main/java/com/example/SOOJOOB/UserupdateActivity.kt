@@ -32,9 +32,19 @@ class UserupdateActivity : AppCompatActivity() {
             }
         })
 
+        binding.btnPw.setOnClickListener {
+            val intent = Intent(this, PasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tvUserDelete.setOnClickListener{
+            val intent = Intent(this, UserDeleteActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.nextButton.setOnClickListener {
             val userDataUpdate = UserupdateRequestBody(
-                binding.ageTextInputLayout.editText?.text.toString(),
+                binding.ageTextInputLayout.editText?.text.toString().toInt(),
                 binding.emailTextInputLayout.editText?.text.toString(),
                 binding.regionTextInputLayout.editText?.text.toString(),
                 binding.usernameTextInputLayout.editText?.text.toString()
@@ -52,6 +62,10 @@ class UserupdateActivity : AppCompatActivity() {
                 }
             })
 
+        }
+
+        binding.backSignup.setOnClickListener{
+            super.onBackPressed()
         }
     }
 }

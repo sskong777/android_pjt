@@ -31,8 +31,10 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAS9cn9ixRM5oW2ODVy9UY5aYJbQBe273g"/>
-
+            android:value="${google_map_key}"/>
+        <activity
+            android:name=".RankActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.SOOJOOB.BadgesActivity"
             android:exported="false" />
@@ -50,6 +52,7 @@
             android:exported="true">
         </activity>
         <activity android:name=".WeatherActivity"/>
+        <activity android:name=".ArticleDetailActivity"/>
         <activity
             android:name=".ArticleActivity"
             android:exported="true" />
@@ -61,22 +64,35 @@
             android:exported="false">
         </activity>
         <activity
+            android:name="com.example.SOOJOOB.PasswordActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".MyArticleActivity"
             android:exported="false">
         </activity>
         <activity
             android:name="com.example.SOOJOOB.LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.example.SOOJOOB.MainActivity"
             android:exported="true">
 
+        </activity>
+
+        <activity
+            android:name="com.example.SOOJOOB.UserDeleteActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.example.SOOJOOB.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

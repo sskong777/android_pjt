@@ -23,6 +23,8 @@ class CommunityFragment : Fragment() {
     private lateinit var createBtn: ImageView
     private lateinit var lastestBtn: Button
     private lateinit var pastBtn:Button
+    private lateinit var rankingButton:ImageView
+
 
     fun work(){
         val service = RetrofitAPI.articleService
@@ -77,10 +79,19 @@ class CommunityFragment : Fragment() {
         lastestBtn = itemView.findViewById(R.id.lastestSort)
         pastBtn = itemView.findViewById(R.id.pastSort)
         createBtn = itemView.findViewById(R.id.add_article_btn)
+        rankingButton = itemView.findViewById(R.id.ranking_button)
+
+
         createBtn.setOnClickListener {
             val intent = Intent(activity, ArticleInsertActivity::class.java)
             startActivity(intent)
         }
+
+        rankingButton.setOnClickListener {
+            val intent = Intent(activity, RankActivity::class.java)
+            startActivity(intent)
+        }
+
         work()
     }
 //    override fun onDestroyView() {

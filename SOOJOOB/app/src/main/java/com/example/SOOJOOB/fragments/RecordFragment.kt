@@ -29,6 +29,8 @@ class RecordFragment : Fragment() {
     private lateinit var trashSortBtn:Button
     private lateinit var dateSortBtn:Button
     private lateinit var nextMapsBtn:ImageView
+    private lateinit var rankingButton:ImageView
+
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater,
@@ -126,9 +128,16 @@ class RecordFragment : Fragment() {
         trashSortBtn = itemView.findViewById(R.id.trashSort)
         dateSortBtn = itemView.findViewById(R.id.dateSort)
         nextMapsBtn = itemView.findViewById(R.id.next_maps)
+        rankingButton = itemView.findViewById(R.id.ranking_button)
+
 
         nextMapsBtn.setOnClickListener {
             val intent = Intent(activity, MapsActivity::class.java)
+            startActivity(intent)
+        }
+
+        rankingButton.setOnClickListener {
+            val intent = Intent(activity, RankActivity::class.java)
             startActivity(intent)
         }
 

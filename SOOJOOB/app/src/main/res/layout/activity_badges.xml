@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="나의 대표 배지"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/greenTxt"/>
 
@@ -65,7 +65,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="획득한 배지가 "
-                            android:textSize="13sp"
+                            android:textSize="15sp"
                             android:textColor="@color/greenTxt"/>
 
                         <TextView
@@ -73,7 +73,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="00"
-                            android:textSize="13sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/greenTxt"/>
 
@@ -81,7 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="개 있어요."
-                            android:textSize="13sp"
+                            android:textSize="15sp"
                             android:textColor="@color/greenTxt"/>
 
 
@@ -92,14 +92,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:text="대표 배지는 회원님의 수줍 온도에 따라 결정돼요."
-                    android:textSize="13sp"
+                    android:textSize="15sp"
                     android:textColor="@color/greenTxt"/>
 
                 <LinearLayout
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/round_mybadge"
+                    android:background="@drawable/round"
+                    android:backgroundTint="#EDD200"
                     android:gravity="center">
 
                         <ImageView

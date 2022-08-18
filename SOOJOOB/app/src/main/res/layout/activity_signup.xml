@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayBG"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".MainActivity">
+    android:padding="20dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="지금 회원가입하신 후"
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
                     android:textStyle="normal" />
 
@@ -65,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="수줍의 다양한 서비스를 만나보세요."
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
                     android:textStyle="normal" />
             </LinearLayout>
@@ -79,9 +80,7 @@
                 android:text="@string/email"
                 android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_textview" />
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_text_input_layout"
@@ -91,10 +90,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="5dp"
                 app:counterEnabled="true"
-                app:counterMaxLength="40"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_textview">
+                app:counterMaxLength="40">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_text_input_edit_text"
@@ -113,9 +109,7 @@
                 android:text="@string/username"
                 android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_text_input_layout" />
+                android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/username_text_input_layout"
@@ -123,10 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_textview">
+                android:layout_marginTop="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username_text_input_edit_text"
@@ -145,9 +136,7 @@
                 android:text="@string/password"
                 android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout" />
+                android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_text_input_layout"
@@ -158,9 +147,6 @@
                 android:layout_marginTop="5dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="16"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_textview"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -180,9 +166,7 @@
                 android:text="@string/password_recheck"
                 android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout" />
+                android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_recheck_text_input_layout"
@@ -191,9 +175,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_recheck_textview"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -205,7 +186,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/next_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -213,13 +194,11 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_gravity="center"
                 android:text="@string/signup"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:background="@drawable/round_green"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
+                android:textColor="@color/whiteTxt"
+                android:background="@drawable/round_bluebutton"
+                android:backgroundTint="@color/green"/>
         </LinearLayout>
 
     </ScrollView>

@@ -67,10 +67,6 @@ class NoContentAdapter (val context: Context, val ContentList : ArrayList<Badge>
 
 //        badgeContent.text = content.badgeDetail
         badgeTitle.text = content.badgeName
-        Glide.with(context)
-            .load(content.imgUrl)
-            .placeholder(R.drawable.ic_lock)
-            .into(badgeImg)
 
         return view
     }

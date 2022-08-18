@@ -19,23 +19,23 @@ data class UserInfoResponseBody(
 
 data class UserInfoData(
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("username")
-    val username: String,
+    val username: String?,
     @SerializedName("password")
-    val password: String,
+    val password: String?,
     @SerializedName("email")
-    val email: String,
+    val email: String?,
     @SerializedName("age")
-    val age: Any,
+    val age: Int?,
     @SerializedName("gender")
-    val gender: Any,
+    val gender: Any?,
     @SerializedName("region")
-    val region: Any,
+    val region: Any?,
     @SerializedName("weight")
-    val weight: Any,
+    val weight: Any?,
     @SerializedName("height")
-    val height: Any,
+    val height: Any?,
 )
 
 interface UserInfoService {
@@ -49,7 +49,7 @@ interface UserInfoService {
 
 class UserInfoWork () {
 
-    fun work(completion : (statusCode:Int, username:String?, email:String?, age:Any?, gender:Any?, region:Any?) -> Unit) {
+    fun work(completion : (statusCode:Int, username:String?, email:String?, age:Int?, gender:Any?, region:Any?) -> Unit) {
         val service = RetrofitAPI.userinfoService
 
         service.userInfoEnqueue()
@@ -65,7 +65,7 @@ class UserInfoWork () {
                         val age = response.body()?.data?.age
                         val gender = response.body()?.data?.gender
                         val region = response.body()?.data?.region
-                        completion(response.code(), "$username", "$email", "$age", "$gender", "$region")
+                        completion(response.code(), "$username", "$email", age, "$gender", "$region")
                     }
                     else {
                         Log.d("통신 실패", "$response")

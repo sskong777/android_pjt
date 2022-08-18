@@ -30,31 +30,31 @@ data class UserData(
 
 data class UserRecord(
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("username")
-    val username: String,
+    val username: String?,
     @SerializedName("password")
-    val password: String,
+    val password: String?,
     @SerializedName("email")
-    val email: String,
+    val email: String?,
     @SerializedName("role")
-    val role: String,
+    val role: String?,
     @SerializedName("age")
-    val age: Any,
+    val age: Any?,
     @SerializedName("gender")
-    val gender: Any,
+    val gender: Any?,
     @SerializedName("region")
-    val region: Any,
+    val region: Any?,
     @SerializedName("weight")
-    val weight: Any,
+    val weight: Any?,
     @SerializedName("height")
-    val height: Any,
+    val height: Any?,
     @SerializedName("activated")
-    val activated: Boolean,
+    val activated: Boolean?,
     @SerializedName("provider")
-    val provider: Any,
+    val provider: Any?,
     @SerializedName("providerId")
-    val providerId: Any,
+    val providerId: Any?,
     @SerializedName("createDate")
-    val createDate: String,
+    val createDate: String?,
 )

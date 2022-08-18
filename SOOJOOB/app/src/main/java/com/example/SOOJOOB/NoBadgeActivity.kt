@@ -83,7 +83,6 @@ class NoBadgeActivity : AppCompatActivity() {
             .into(imgView)
 
         val alertDialog = AlertDialog.Builder(this)
-            .setTitle(" ")
             .create()
 
         val btnView = view.findViewById<Button>(R.id.dialog_ok)

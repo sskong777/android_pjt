@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,8 +48,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="회원정보 수정"
-                    android:textColor="#000000"
-                    android:textSize="32dp"
+                    android:textColor="@color/greenTxt"
+                    android:textSize="32sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -57,17 +57,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="자세한 회원정보를 입력하시면"
-                    android:textColor="#6A6A6A"
-                    android:textSize="16dp"
-                    android:textStyle="normal" />
+                    android:textColor="@color/grayTxt"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="더 다양한 서비스를 이용 할 수 있습니다."
-                    android:textColor="#6A6A6A"
-                    android:textSize="16dp"
-                    android:textStyle="normal" />
+                    android:textColor="@color/grayTxt"
+                    android:textSize="16sp"/>
             </LinearLayout>
 
 
@@ -76,30 +74,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/username"
-                android:textColor="@color/black"
+                android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_text_input_layout" />
+                android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/username_text_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="170dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_textview">
+                android:layout_marginTop="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username_text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextLabel" />
+                    android:textAppearance="@style/TextLabel"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -110,11 +103,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/email"
-                android:textColor="@color/black"
+                android:textColor="@color/greenTxt"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout" />
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_text_input_layout"
@@ -122,10 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age_textview">
+                android:layout_marginTop="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_text_input_edit_text"
@@ -135,82 +123,136 @@
                     android:textAppearance="@style/TextLabel" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/age_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/age"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/age_text_input_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age_textview">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/age_text_input_edit_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextLabel" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/region_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/region"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/region_text_input_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age_textview">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/region_text_input_edit_text"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextLabel" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-            <Button
+                    <TextView
+                        android:id="@+id/age_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        tools:layout_marginStart="10dp"
+                        android:text="@string/age"
+                        android:textColor="@color/greenTxt"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/age_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/age_text_input_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextLabel"
+                            android:inputType="number"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/region_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/region"
+                        android:textColor="@color/greenTxt"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/region_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/region_text_input_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextLabel"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/btnLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/round_wbutton"
+                    android:backgroundTint="#EDA900"
+                    android:text="비밀번호 변경"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"/>
+
+                <android.widget.Button
+                    android:id="@+id/tv_user_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/round_wbutton"
+                    android:backgroundTint="@color/grayBT"
+                    android:text="회원 탈퇴"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+            <android.widget.Button
                 android:id="@+id/next_button"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="40dp"
-                android:background="@drawable/round_green"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/round_wbutton"
+                android:backgroundTint="@color/green"
                 android:text="@string/user_update"
-                android:textSize="18dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 

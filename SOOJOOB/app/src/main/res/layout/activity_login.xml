@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="20dp"
     android:background="@color/grayBG"
@@ -34,8 +35,12 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
+                    android:paddingRight="5dp"
+                    android:shadowColor="@color/greenDark"
+                    android:shadowDx="6.0"
+                    android:shadowRadius="5.0"
                     android:text="SOOJOOB"
-                    android:textColor="#519800"
+                    android:textColor="@color/green"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -61,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="이메일 주소로 로그인 하시거나"
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
                     android:textStyle="normal" />
 
@@ -69,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SNS 계정으로 간편하게 로그인 하세요."
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
                     android:textStyle="normal" />
             </LinearLayout>
@@ -142,7 +147,7 @@
                     android:textAppearance="@style/TextLabel" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/next_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -150,9 +155,11 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_gravity="center"
                 android:text="@string/login"
-                android:textSize="18sp"
+                android:textSize="20sp"
+                android:textColor="@color/whiteTxt"
                 android:textStyle="bold"
-                android:background="@drawable/round_green"
+                android:background="@drawable/round_bluebutton"
+                android:backgroundTint="@color/green"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -164,7 +171,7 @@
                 android:layout_gravity="center"
                 android:text="@string/sns_signup"
                 android:layout_marginVertical="10dp"
-                android:textColor="#6A6A6A"
+                android:textColor="@color/grayTxt"
                 android:textSize="16sp"
                 android:textStyle="normal" />
 
@@ -174,7 +181,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/round_button"
+                android:background="@drawable/round"
+                android:backgroundTint="#D4F4FA"
                 android:gravity="center"
                 android:layout_gravity="center">
 
@@ -196,18 +204,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="계정이 없으신가요?"
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
-                    android:textStyle="normal" />
+                    android:textStyle="normal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="@string/next_signup"
-                    android:textColor="#6A6A6A"
+                    android:textColor="@color/grayTxt"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -8,10 +8,19 @@
     <color name="black">#FF000000</color>
     <color name="gray">#808080</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="green">#519800</color>
+
+    // Custom Color
     <color name="grayBG">#FBFBFB</color>
     <color name="grayBT">#505050</color>
+    <color name="grayTxt">#5D5D5D</color>
+    <color name="green">#81B214</color>
+    <color name="greenTxt">#002C00</color>
+    <color name="greenDark">#356300</color>
     <color name="light_yellow">#FBF6D9</color>
-    <color name="greenTxt">#001A00</color>
+    <color name="blue">#3669CF</color>
+    <color name="whiteTxt">#FFFCF6</color>
+    <color name="whiteBT">#D5D5D5</color>
+    <color name="purpleBT">#B7F0B1</color>
+
 
 </resources>

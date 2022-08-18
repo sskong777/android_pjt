@@ -63,11 +63,6 @@ class ArticleActivity : AppCompatActivity() {
         this.work()
         println("게시판 데이터 get 호출!!")
 
-        binding.addArticleBtn.setOnClickListener{
-            val intent = Intent(this, ArticleInsertActivity::class.java)
-            startActivity(intent)
-        }
-
 
 
     }

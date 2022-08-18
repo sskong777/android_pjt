@@ -51,8 +51,7 @@ class ArticleInsertActivity  : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_trash)
-        binding.uploadImageBtn.setImageBitmap(bitmap)
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_park)
 
         binding.btnWrite.setOnClickListener{
 
