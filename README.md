@@ -12,3 +12,4 @@
   * https://console.firebase.google.com/?hl=ko
   * token값 받아오기
 
+* Soojoob Project
